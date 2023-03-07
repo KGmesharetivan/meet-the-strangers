@@ -12,6 +12,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+// Socket IO connection established
 io.on("connection", (socket) => {
   console.log("user connected to socket.IO server");
   console.log(socket.id);
