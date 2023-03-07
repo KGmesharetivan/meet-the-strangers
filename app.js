@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -12,12 +13,24 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-// Socket IO connection established
+let connectedPeers = [];
+
 io.on("connection", (socket) => {
-  console.log("user connected to socket.IO server");
-  console.log(socket.id);
+  connectedPeers.push(socket.id);
+  console.log(connectedPeers);
+
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+
+    const newConnectedPeers = connectedPeers.filter((peerSocketId) => {
+      peerSocketId !== socket.id;
+    });
+
+    connectedPeers = newConnectedPeers;
+    console.log(connectedPeers);
+  });
 });
 
 server.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+  console.log(`listening on ${PORT}`);
 });

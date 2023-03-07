@@ -1,6 +1,6 @@
 const socket = io("/");
 
-socket.io("connect", () => {
-  console.log("successfully connected to socket.io server");
+socket.on("connect", () => {
+  console.log("succesfully connected to socket.io server");
   console.log(socket.id);
 });

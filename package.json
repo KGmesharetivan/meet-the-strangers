@@ -1,16 +1,17 @@
 {
   "name": "meet-the-strangers",
   "version": "1.0.0",
-  "description": "building a real mmessaging application with video,audio and data",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "Mesharet Ivan Lorica",
+  "author": "Marek Gryszkiewicz",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "nodemon": "^2.0.21",
-    "socket.io": "^4.6.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.1.1"
   }
 }
