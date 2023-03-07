@@ -1,0 +1,11 @@
+{
+  "name": "meet-the-strangers",
+  "version": "1.0.0",
+  "description": "building a real mmessaging application with video,audio and data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mesharet Ivan Lorica",
+  "license": "ISC"
+}
